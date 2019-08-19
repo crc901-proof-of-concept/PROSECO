@@ -1,10 +1,4 @@
 ext { springBootVersion = '1.5.16.RELEASE' }
-
-jar {
-    baseName = 'PROSECO-commons'
-    version = '0.0.1-SNAPSHOT'
-}
-
 dependencies {	
 	//owner framework
 	compile group: 'org.aeonbits.owner', name: 'owner-java8', version:'1.0.6'
