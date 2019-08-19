@@ -79,5 +79,5 @@ allprojects {
 	    	}
 	}
 
-	check.dependsOn jacocoTestReport
+	// check.dependsOn jacocoTestReport
 }
