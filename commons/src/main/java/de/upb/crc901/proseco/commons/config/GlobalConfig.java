@@ -24,11 +24,11 @@ public interface GlobalConfig extends Config {
 	 * @return A flag stating whether PROSECO is executed in DEBUG mode.
 	 */
 	@Key(K_DEBUG_MODE)
-	@DefaultValue("false")
+	@DefaultValue("true")
 	public boolean debugMode();
 
 	@Key(K_REDIRECT_PROCESS_OUTPUTS)
-	@DefaultValue("false")
+	@DefaultValue("true")
 	public boolean redirectProcessOutputs();
 
 	@Key(K_DISABLE_DEPLOYMENT)
@@ -36,14 +36,14 @@ public interface GlobalConfig extends Config {
 	public boolean debugDisableDeployment();
 
 	@Key(K_DISABLE_GROUNDING)
-	@DefaultValue("true")
+	@DefaultValue("false")
 	public boolean debugDisableGrounding();
 
 	/**
 	 * @return The file of the proseco config.
 	 */
 	@Key(K_PROSECO_CONFIG_FILE)
-	@DefaultValue("res/proseco.conf")
+	@DefaultValue("conf/proseco.conf")
 	public File prosecoConfigFile();
 
 	/**

@@ -71,7 +71,7 @@ public abstract class AProsecoConfigurationProcess implements ProcessController 
 		return this.processId;
 	}
 
-	protected void setProcessId(final String processId) {
+	public void setProcessId(final String processId) {
 		this.processId = processId;
 	}
 
@@ -96,7 +96,7 @@ public abstract class AProsecoConfigurationProcess implements ProcessController 
 	@Override
 	public PROSECOSolution startComposition(final int timeoutInSeconds) throws NoStrategyFoundASolutionException, InvalidStateTransitionException, PrototypeCouldNotBeExtractedException {
 		this.updateProcessState(EProcessState.COMPOSITION);
-
+		this.timeoutInSeconds = timeoutInSeconds;
 		this.extractPrototype();
 
 		final int secondsReservedForGrounding = this.processEnvironment.getPrototypeConfig().getSecondsReservedForGrounding();
@@ -398,7 +398,7 @@ public abstract class AProsecoConfigurationProcess implements ProcessController 
 
 	}
 
-	protected void createNewForConfig(final String processId, final PROSECOConfig config) throws ProcessIdAlreadyExistsException, InvalidStateTransitionException {
+	public void createNewForConfig(final String processId, final PROSECOConfig config) throws ProcessIdAlreadyExistsException, InvalidStateTransitionException {
 		if (processId != null) {
 			final File processFolder = new File(config.getDirectoryForProcesses() + File.separator + processId);
 			if (processFolder.exists()) {
